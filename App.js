@@ -26,6 +26,20 @@ const App = () => {
     }
   }
 
+  async function newScreen() {
+    console.log("Before sleep");
+    await sleep(2000); // Sleep for 2 seconds
+    console.log("After sleep [After 2 Seconds]");
+  }
+  
+  function sleep(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
+  if(hasPermission){
+    newScreen();
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
